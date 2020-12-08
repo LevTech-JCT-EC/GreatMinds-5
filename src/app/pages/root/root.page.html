@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>
+        <h4>To Do List</h4>
+    </mat-card-title>
+</mat-card>
+
+<mat-card *ngFor="let listItem of list">
+    <form>
+        <mat-form-field>
+        <mat-label>Item name</mat-label>
+        <input name="sample" type="text" matInput [(ngModel)]="listItem.name" />
+        </mat-form-field>
+    </form>
+    <mat-checkbox [(ngModel)]="listItem.checked"></mat-checkbox> &nbsp; <mat-slider [(ngModel)]="listItem.amount"></mat-slider>
+    <span>{{listItem.amount}}</span>
+</mat-card>
+<button class="create-item" mat-raised-button color="primary" (click)="addNewItem()">
+    Add New Item
+</button>
